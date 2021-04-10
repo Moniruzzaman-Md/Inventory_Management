@@ -61,6 +61,10 @@ namespace Shop_Management.View
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+#if DEBUG
+            this.text_userName.Text = "Admin";
+            this.text_password.Text = "Admin";
+#endif
             if (this.text_userName.Text == "")
             {
                 this.text_userName.BackColor = Color.DarkRed;
@@ -80,19 +84,26 @@ namespace Shop_Management.View
                     User userFromDB = lController.IsUserValid(user);
                     if (userFromDB != null)
                     {
-                        if (userFromDB.Approved)
+                        if (userFromDB.Approved == "Approved")
                         {
                             if (userFromDB.Role)
                             {
-
+                                //MessageBox.Show(user.Name);
+                                _master.Admin_Page(userFromDB, this.Size, this.Location);
+                                this.Hide();
                             }
                             else
                             {
 
                             }
                         }
+                        else if(userFromDB.Approved == "Unapproved")
                         {
                             new Modal("Your Account has not been approved by admin yet. \r\nContact an admin").ShowDialog();
+                        }
+                        else if(userFromDB.Approved == "Restricted")
+                        {
+                            new Modal("Your Account has not been restricted").ShowDialog();
                         }
                     }
                     else

@@ -45,6 +45,9 @@ namespace Shop_Management.DatabaseConnection
             }
             catch (Exception ex)
             {
+#if DEBUG
+                Trace.WriteLine(ex.ToString());
+#endif
                 return false;
             }
         }
@@ -59,6 +62,9 @@ namespace Shop_Management.DatabaseConnection
             }
             catch (Exception ex)
             {
+#if DEBUG
+                Trace.WriteLine(ex.ToString());
+#endif
                 return false;
             }
         }
@@ -81,6 +87,9 @@ namespace Shop_Management.DatabaseConnection
             }
             catch (Exception ex)
             {
+#if DEBUG
+                Trace.WriteLine(ex.ToString());
+#endif
                 ServerConnectionString.Close();
                 return false;
             }
@@ -97,7 +106,7 @@ namespace Shop_Management.DatabaseConnection
                 "UserName nvarchar(50) NOT NULL UNIQUE," +
                 "Name nvarchar(50) NOT NULL," +
                 "Password nvarchar(60) NOT NULL," +
-                "Approved BIT NOT NULL DEFAULT 0," +
+                "Approved nvarchar(10) NOT NULL DEFAULT 'Unapproved'," +
                 "Role BIT NOT NULL DEFAULT 0);";
             SqlCommand cmd = new (query, DatabaseConnectionString);
             try
@@ -108,6 +117,9 @@ namespace Shop_Management.DatabaseConnection
             }
             catch (Exception ex)
             {
+#if DEBUG
+                Trace.WriteLine(ex.ToString());
+#endif
                 DatabaseConnectionString.Close();
                 return false;
             }
@@ -124,7 +136,7 @@ namespace Shop_Management.DatabaseConnection
             {
                 query = "INSERT INTO Users " +
                     "(UserName, Name, Password, Approved, Role)" +
-                    "VALUES ('Admin', 'Default Admin', 'Admin', 1, 1)";
+                    "VALUES ('Admin', 'Default Admin', 'Admin', 'Approved', 1)";
                 cmd = new(query, DatabaseConnectionString);
                 try
                 {
@@ -144,6 +156,9 @@ namespace Shop_Management.DatabaseConnection
                 }
                 catch (Exception ex)
                 {
+#if DEBUG
+                    Trace.WriteLine(ex.ToString());
+#endif
                     DatabaseConnectionString.Close();
                     return false;
                 }
@@ -162,7 +177,9 @@ namespace Shop_Management.DatabaseConnection
                 }
                 catch(Exception e)
                 {
-
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
                 }
                 try
                 {
@@ -171,6 +188,9 @@ namespace Shop_Management.DatabaseConnection
                 }
                 catch (Exception e)
                 {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
                     return false;
                 }
             }
@@ -191,6 +211,9 @@ namespace Shop_Management.DatabaseConnection
                 }
                 catch (Exception e)
                 {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
                     return false;
                 }
             }

@@ -58,7 +58,7 @@ namespace Shop_Management.View
             this.panel_login.Controls.Add(this.panel_right);
             this.panel_login.Controls.Add(this.text_userName);
             this.panel_login.Controls.Add(this.panel_left);
-            this.panel_login.Location = new System.Drawing.Point(201, 78);
+            this.panel_login.Location = new System.Drawing.Point(268, 133);
             this.panel_login.MaximumSize = new System.Drawing.Size(400, 280);
             this.panel_login.MinimumSize = new System.Drawing.Size(400, 280);
             this.panel_login.Name = "panel_login";
@@ -195,9 +195,10 @@ namespace Shop_Management.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.panel_login);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.MaximumSize = new System.Drawing.Size(950, 600);
+            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

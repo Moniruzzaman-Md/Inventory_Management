@@ -207,7 +207,7 @@ namespace Shop_Management.View
                 user.UserName = userName;
                 user.Name = name;
                 user.Password = password;
-                user.Approved = false;
+                user.Approved = "Unapproved";
                 user.Role = false;
 
 

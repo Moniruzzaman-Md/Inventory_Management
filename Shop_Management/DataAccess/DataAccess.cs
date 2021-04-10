@@ -33,9 +33,12 @@ namespace Shop_Management.DataAccess
                 }
                 catch (Exception e)
                 {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
                     _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
                 }
-                if (count> 0)
+                if (count > 0)
                 {
                     return true;
                 }
@@ -56,7 +59,7 @@ namespace Shop_Management.DataAccess
             {
                 string query = "INSERT INTO Users " +
                     "(UserName, Name, Password, Approved, Role)" +
-                    $"VALUES ('{user.UserName}', '{user.Name}', '{user.Password}', {Convert.ToByte(user.Approved)}, {Convert.ToByte(user.Role)})";
+                    $"VALUES ('{user.UserName}', '{user.Name}', '{user.Password}', '{user.Approved}', {Convert.ToByte(user.Role)})";
 
                 SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
 
@@ -67,13 +70,16 @@ namespace Shop_Management.DataAccess
                     {
                         _databaseConnection.CloseConnection();
                     }
-                   catch(Exception e)
+                    catch (Exception e)
                     {
+#if DEBUG
+                        Trace.WriteLine(e.ToString());
+#endif
                         _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
                     }
                     return true;
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
 #if DEBUG
                     Trace.WriteLine(e.ToString());
@@ -92,7 +98,7 @@ namespace Shop_Management.DataAccess
         {
             string query = $"SELECT * FROM Users WHERE UserName = '{user.UserName}' AND Password = '{user.Password}'";
             SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
-            
+
             if (_databaseConnection.OpenConnection())
             {
                 try
@@ -105,9 +111,8 @@ namespace Shop_Management.DataAccess
                         {
                             userFromDB.UserID = Convert.ToInt32(result["UserID"]);
                             userFromDB.Name = Convert.ToString(result["Name"]);
-                            userFromDB.Approved = Convert.ToBoolean(result["Approved"]);
+                            userFromDB.Approved = Convert.ToString(result["Approved"]);
                             userFromDB.Role = Convert.ToBoolean(result["Role"]);
-                            return userFromDB;
                         }
                         try
                         {
@@ -115,6 +120,9 @@ namespace Shop_Management.DataAccess
                         }
                         catch (Exception e)
                         {
+#if DEBUG
+                            Trace.WriteLine(e.ToString());
+#endif
                             _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
                         }
                         return userFromDB;
@@ -139,6 +147,103 @@ namespace Shop_Management.DataAccess
                 _master.Alert("Could not establish connection with database -_-", View.Notification.PopUp.enmType.Error);
                 User userFromDB = null;
                 return userFromDB;
+            }
+        }
+
+        public List<User> GetUnapprovedUsers()
+        {
+            string query = "SELECT * FROM Users WHERE Approved = 'Unapproved'";
+            SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
+
+            if (_databaseConnection.OpenConnection())
+            {
+                try
+                {
+                    SqlDataReader result = cmd.ExecuteReader();
+                    if (result.HasRows)
+                    {
+                        List<User> users = new();
+                        while (result.Read())
+                        {
+                            User user = new();
+                            user.UserID = Convert.ToInt32(result["UserID"]);
+                            user.Name = Convert.ToString(result["Name"]);
+                            user.Approved = Convert.ToString(result["Approved"]);
+                            user.Role = Convert.ToBoolean(result["Role"]);
+                            user.UserName = Convert.ToString(result["UserName"]);
+                            users.Add(user);
+                        }
+                        try
+                        {
+                            _databaseConnection.CloseConnection();
+                        }
+                        catch (Exception e)
+                        {
+#if DEBUG
+                            Trace.WriteLine(e.ToString());
+#endif
+                            _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
+                        }
+                        return users;
+                    }
+                    else
+                    {
+                        List<User> users = null;
+                        return users;
+                    }
+                }
+                catch (Exception e)
+                {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
+                    List<User> users = null;
+                    return users;
+                }
+            }
+            else
+            {
+                _master.Alert("Could not establish connection with database -_-", View.Notification.PopUp.enmType.Error);
+                List<User> users = null;
+                return users;
+            }
+        }
+
+        public bool ApproveUser(int id)
+        {
+            string query = $"UPDATE Users SET Approved = 'Approved' WHERE UserID = '{id}'";
+            SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
+            if (_databaseConnection.OpenConnection())
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        _databaseConnection.CloseConnection();
+                    }
+                    catch (Exception e)
+                    {
+#if DEBUG
+                        Trace.WriteLine(e.ToString());
+#endif
+                        _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
+                    }
+                    return true;
+                    
+                }
+                catch (Exception e)
+                {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
+                    return false;
+                }
+            }
+            else
+            {
+                _master.Alert("Could not establish connection with database -_-", View.Notification.PopUp.enmType.Error);
+                return false;
             }
         }
     }

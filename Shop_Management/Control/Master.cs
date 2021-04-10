@@ -1,4 +1,6 @@
-﻿using Shop_Management.View;
+﻿using Shop_Management.Model;
+using Shop_Management.View;
+using Shop_Management.View.Admin;
 using Shop_Management.View.Notification;
 using System;
 using System.Collections.Generic;
@@ -98,6 +100,16 @@ namespace Shop_Management.Control
             _login.Location = location;
             _login.setResources(this);
             _login.Show();
+        }
+
+        public void Admin_Page(User user, System.Drawing.Size size, System.Drawing.Point location)
+        {
+            Admin admin = new(user);
+            admin.Size = size;
+            admin.StartPosition = FormStartPosition.Manual;
+            admin.Location = location;
+            admin.setResources(this);
+            admin.Show();
         }
 
         public void Alert(string msg, PopUp.enmType type)

@@ -1,4 +1,5 @@
 ﻿
+
 namespace Shop_Management.View
 {
     partial class Registration
@@ -60,7 +61,7 @@ namespace Shop_Management.View
             this.panel_registration.Controls.Add(this.label_registration);
             this.panel_registration.Controls.Add(this.panel_right);
             this.panel_registration.Controls.Add(this.panel_left);
-            this.panel_registration.Location = new System.Drawing.Point(201, 79);
+            this.panel_registration.Location = new System.Drawing.Point(268, 134);
             this.panel_registration.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel_registration.MaximumSize = new System.Drawing.Size(400, 280);
             this.panel_registration.MinimumSize = new System.Drawing.Size(400, 280);
@@ -236,9 +237,10 @@ namespace Shop_Management.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.panel_registration);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.MaximumSize = new System.Drawing.Size(950, 600);
+            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "Registration";
             this.Text = "Registration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_FormClosing);
