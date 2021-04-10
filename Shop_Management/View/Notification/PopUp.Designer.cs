@@ -31,9 +31,9 @@ namespace Shop_Management.View.Notification
         {
             this.components = new System.ComponentModel.Container();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.Massage = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.btnClose = new System.Windows.Forms.Panel();
+            this.Massage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,17 +49,6 @@ namespace Shop_Management.View.Notification
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // Massage
-            // 
-            this.Massage.AutoSize = true;
-            this.Massage.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Massage.ForeColor = System.Drawing.Color.White;
-            this.Massage.Location = new System.Drawing.Point(58, 22);
-            this.Massage.Name = "Massage";
-            this.Massage.Size = new System.Drawing.Size(167, 21);
-            this.Massage.TabIndex = 1;
-            this.Massage.Text = "Notification Message";
-            // 
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
@@ -69,11 +58,22 @@ namespace Shop_Management.View.Notification
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.BackgroundImage = global::Shop_Management.Properties.Resources.error;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.Location = new System.Drawing.Point(328, 22);
+            this.btnClose.Location = new System.Drawing.Point(328, 21);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 20);
             this.btnClose.TabIndex = 4;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // Massage
+            // 
+            this.Massage.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Massage.ForeColor = System.Drawing.Color.White;
+            this.Massage.Location = new System.Drawing.Point(58, 1);
+            this.Massage.Name = "Massage";
+            this.Massage.Size = new System.Drawing.Size(264, 63);
+            this.Massage.TabIndex = 5;
+            this.Massage.Text = "User Name must be 5 character or long!!";
+            this.Massage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PopUp
             // 
@@ -81,23 +81,22 @@ namespace Shop_Management.View.Notification
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(360, 67);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.Massage);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PopUp";
-            this.Text = "PopUp";
+            this.Text = "User name must be atltast 5 character long";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.Label Massage;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Panel btnClose;
+        private System.Windows.Forms.Label Massage;
     }
 }

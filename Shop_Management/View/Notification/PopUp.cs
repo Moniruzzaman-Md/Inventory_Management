@@ -59,10 +59,10 @@ namespace Shop_Management.View.Notification
                     }
                     break;
                 case enmAction.close:
-                    timer.Interval = 1;
-                    this.Opacity -= 0.1;
+                    timer.Interval = 2;
+                    this.Opacity -= 0.2;
 
-                    this.Left -= 3;
+                    this.Left += 4;
                     if (base.Opacity == 0.0)
                     {
                         base.Close();
@@ -105,18 +105,22 @@ namespace Shop_Management.View.Notification
                 case enmType.Success:
                     this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.success;
                     this.BackColor = Color.SeaGreen;
+                    this.Massage.BackColor = Color.SeaGreen;
                     break;
                 case enmType.Error:
                     this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.error;
                     this.BackColor = Color.DarkRed;
+                    this.Massage.BackColor = Color.DarkRed;
                     break;
                 case enmType.Info:
                     this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.info;
                     this.BackColor = Color.RoyalBlue;
+                    this.Massage.BackColor = Color.RoyalBlue;
                     break;
                 case enmType.Warning:
                     this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.warning;
                     this.BackColor = Color.DarkOrange;
+                    this.Massage.BackColor = Color.DarkOrange;
                     break;
             }
 

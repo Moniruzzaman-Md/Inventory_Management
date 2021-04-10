@@ -1,10 +1,10 @@
-﻿using Shop_Management.DBSchema;
-using Shop_Management.View;
+﻿using Shop_Management.View;
 using Shop_Management.View.Notification;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.DirectoryServices;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,10 +16,9 @@ namespace Shop_Management.Control
 {
     public class Master
     {
-        private static DatabaseConnection db = new DatabaseConnection();
+        private static DatabaseConnection.DatabaseConnection db = new();
         private static int tabletrycount = 1;
         private int databasetrycount = 1;
-        private string massage;
 
         private Login _login = new();
         public Master()
@@ -31,7 +30,8 @@ namespace Shop_Management.Control
             }
             else
             {
-                MessageBox.Show("Cannot connect to server!!");
+                MessageBox.Show("Cannot connect to server!!. \nCheck if you have sql server installed. \nThis program requires sql server as database.");
+                goto Exit;
             }
 
         DatabaseConnectionCheck:
@@ -62,30 +62,40 @@ namespace Shop_Management.Control
             if (db.InitializeTables())
             {
 #if DEBUG
-                //MessageBox.Show($"Database Success with {databasetrycount} attempt");
-                //MessageBox.Show($"Table Success with {tabletrycount} attempt");
+                Alert($"Connected to Database with {databasetrycount} attempt", PopUp.enmType.Success);
+                Alert($"Table created with {tabletrycount} attempt", PopUp.enmType.Success);
 #endif
+                if (!db.CreateDefaultAdmin())
+                {
+                    MessageBox.Show("Could not create the Default Admin account");
+                }
                 _login.setResources(this);
                 Application.Run(_login);
-                
+
             }
             else
             {
-                    tabletrycount++;
-                    goto CreateTable;
+                tabletrycount++;
+                goto CreateTable;
             }
         Exit:
             return;
         }
-        public void Registration_Page()
+        public void Registration_Page(System.Drawing.Size size, System.Drawing.Point location)
         {
             Registration registration = new();
+            registration.Size = size;
+            registration.StartPosition = FormStartPosition.Manual;
+            registration.Location = location;
             registration.setResources(this);
             registration.Show();
         }
 
-        public void Login_Page()
+        public void Login_Page(System.Drawing.Size size, System.Drawing.Point location)
         {
+            _login.Size = size;
+            _login.StartPosition = FormStartPosition.Manual;
+            _login.Location = location;
             _login.setResources(this);
             _login.Show();
         }

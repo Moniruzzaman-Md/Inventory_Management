@@ -102,6 +102,7 @@ namespace Shop_Management.View
             this.btn_login.TabIndex = 6;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // label1
             // 
@@ -125,6 +126,7 @@ namespace Shop_Management.View
             this.text_password.PasswordChar = '*';
             this.text_password.Size = new System.Drawing.Size(254, 32);
             this.text_password.TabIndex = 4;
+            this.text_password.Enter += new System.EventHandler(this.text_password_Enter);
             // 
             // panel_right
             // 
@@ -156,6 +158,7 @@ namespace Shop_Management.View
             this.text_userName.Name = "text_userName";
             this.text_userName.Size = new System.Drawing.Size(254, 32);
             this.text_userName.TabIndex = 2;
+            this.text_userName.Enter += new System.EventHandler(this.text_userName_Enter);
             // 
             // panel_left
             // 
@@ -194,8 +197,9 @@ namespace Shop_Management.View
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel_login);
-            this.MinimumSize = new System.Drawing.Size(420, 300);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel_login.ResumeLayout(false);
             this.panel_login.PerformLayout();

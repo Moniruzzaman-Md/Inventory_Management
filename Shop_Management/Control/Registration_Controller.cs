@@ -7,19 +7,22 @@ using System.Threading.Tasks;
 
 namespace Shop_Management.Control
 {
-    class Login_Controller
+    class Registration_Controller
     {
-        private Master _master;
         private DataAccess.DataAccess _dataAccess;
-        public Login_Controller(Master master)
+        private Master _master;
+        public Registration_Controller(Master master)
         {
             _master = master;
             _dataAccess = new(_master);
         }
-
-        public User IsUserValid(User user)
+        public bool RegisterUser(User user)
         {
-            return _dataAccess.IsUSerValid(user);
+            return _dataAccess.RegisterUser(user);
+        }
+        public bool UserNameExists(string name)
+{
+            return _dataAccess.UserNameExists(name);
         }
     }
 }

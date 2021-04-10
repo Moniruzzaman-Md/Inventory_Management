@@ -1,4 +1,6 @@
 ﻿using Shop_Management.Control;
+using Shop_Management.Model;
+using Shop_Management.View.Notification;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,8 +55,62 @@ namespace Shop_Management.View
 
         private void label_create_account_Click(object sender, EventArgs e)
         {
-            _master.Registration_Page();
+            _master.Registration_Page(this.Size, this.Location);
             this.Hide();
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            if (this.text_userName.Text == "")
+            {
+                this.text_userName.BackColor = Color.DarkRed;
+            }
+            else
+            {
+                if (this.text_password.Text == "")
+                {
+                    this.text_password.BackColor = Color.DarkRed;
+                }
+                else
+                {
+                    Login_Controller lController = new(_master);
+                    User user = new();
+                    user.UserName = this.text_userName.Text;
+                    user.Password = this.text_password.Text;
+                    User userFromDB = lController.IsUserValid(user);
+                    if (userFromDB != null)
+                    {
+                        if (userFromDB.Approved)
+                        {
+                            if (userFromDB.Role)
+                            {
+
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        {
+                            new Modal("Your Account has not been approved by admin yet. \r\nContact an admin").ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        _master.Alert("Incorrect User Name or Password", View.Notification.PopUp.enmType.Error);
+                    }
+                }
+            }
+        }
+
+        private void text_userName_Enter(object sender, EventArgs e)
+        {
+            this.text_userName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
+        }
+
+        private void text_password_Enter(object sender, EventArgs e)
+        {
+            this.text_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
         }
     }
 }

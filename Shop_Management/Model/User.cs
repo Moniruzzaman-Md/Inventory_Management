@@ -8,9 +8,11 @@ namespace Shop_Management.Model
 {
     public class User
     {
-        public int UserID { get; }
-        public string userName { get; set; }
+        public int UserID { get; set; }
+        public string UserName { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
+        public bool Approved { get; set; }
+        public bool Role { get; set; }
     }
 }
