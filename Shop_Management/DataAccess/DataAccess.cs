@@ -1,5 +1,5 @@
-﻿using Shop_Management.Control;
-using Shop_Management.Model;
+﻿using Inventory_Management.Control;
+using Inventory_Management.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Shop_Management.DataAccess
+namespace Inventory_Management.DataAccess
 {
     class DataAccess
     {
@@ -26,24 +26,34 @@ namespace Shop_Management.DataAccess
             {
                 string query = $"SELECT COUNT(*) FROM Users WHERE UserName = '{name}'";
                 SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
                 try
                 {
-                    _databaseConnection.CloseConnection();
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    try
+                    {
+                        _databaseConnection.CloseConnection();
+                    }
+                    catch (Exception e)
+                    {
+#if DEBUG
+                        Trace.WriteLine(e.ToString());
+#endif
+                        _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
+                    }
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 catch (Exception e)
                 {
 #if DEBUG
                     Trace.WriteLine(e.ToString());
 #endif
-                    _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
-                }
-                if (count > 0)
-                {
-                    return true;
-                }
-                else
-                {
                     return false;
                 }
             }
@@ -230,7 +240,7 @@ namespace Shop_Management.DataAccess
                         _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
                     }
                     return true;
-                    
+
                 }
                 catch (Exception e)
                 {
@@ -244,6 +254,187 @@ namespace Shop_Management.DataAccess
             {
                 _master.Alert("Could not establish connection with database -_-", View.Notification.PopUp.enmType.Error);
                 return false;
+            }
+        }
+
+        public bool RestrictUser(int id)
+        {
+            string query = $"UPDATE Users SET Approved = 'Restricted' WHERE UserID = '{id}'";
+            SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
+            if (_databaseConnection.OpenConnection())
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        _databaseConnection.CloseConnection();
+                    }
+                    catch (Exception e)
+                    {
+#if DEBUG
+                        Trace.WriteLine(e.ToString());
+#endif
+                        _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
+                    }
+                    return true;
+
+                }
+                catch (Exception e)
+                {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
+                    return false;
+                }
+            }
+            else
+            {
+                _master.Alert("Could not establish connection with database -_-", View.Notification.PopUp.enmType.Error);
+                return false;
+            }
+        }
+
+        public bool AddInventory(Product product)
+        {
+            if (_databaseConnection.OpenConnection())
+            {
+                string query = "INSERT INTO Products" +
+                "(ProductName, Price, Quantity, Approved)" +
+                $"VALUES ('{product.ProductName}','{product.Price}','{product.Quantity}', '{Convert.ToByte(product.Approved)}')";
+
+                SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        _databaseConnection.CloseConnection();
+                    }
+                    catch (Exception e)
+                    {
+#if DEBUG
+                        Trace.WriteLine(e.ToString());
+#endif
+                        _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
+                    }
+                    return true;
+                }
+                catch (Exception e)
+                {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
+                    return false;
+                }
+            }
+            else
+            {
+                _master.Alert("Could not establish connection with database -_-", View.Notification.PopUp.enmType.Error);
+                return false;
+            }
+
+        }
+
+        public bool ProductExists(string name)
+        {
+            if (_databaseConnection.OpenConnection())
+            {
+                string query = $"SELECT COUNT(*) FROM Products WHERE ProductName = '{name}'";
+                SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
+                try
+                {
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    try
+                    {
+                        _databaseConnection.CloseConnection();
+                    }
+                    catch (Exception e)
+                    {
+#if DEBUG
+                        Trace.WriteLine(e.ToString());
+#endif
+                        _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
+                    }
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
+                    return false;
+                }
+            }
+            else
+            {
+                _master.Alert("Could not establish connection with database -_-", View.Notification.PopUp.enmType.Error);
+                return true;
+            }
+        }
+
+        public List<Product> GetUnapprovedProducts()
+        {
+            string query = "SELECT * FROM Products WHERE Approved = 0";
+            SqlCommand cmd = new(query, _databaseConnection.GetConnectionString());
+
+            if (_databaseConnection.OpenConnection())
+            {
+                try
+                {
+                    SqlDataReader result = cmd.ExecuteReader();
+                    if (result.HasRows)
+                    {
+                        List<Product> products = new();
+                        while (result.Read())
+                        {
+                            Product product = new();
+                            product.ProductID = Convert.ToInt32(result["ProductID"]);
+                            product.ProductName = Convert.ToString(result["ProductName"]);
+                            product.Approved = Convert.ToBoolean(result["Approved"]);
+                            product.Price = Convert.ToInt32(result["Price"]);
+                            products.Add(product);
+                        }
+                        try
+                        {
+                            _databaseConnection.CloseConnection();
+                        }
+                        catch (Exception e)
+                        {
+#if DEBUG
+                            Trace.WriteLine(e.ToString());
+#endif
+                            _master.Alert("Error while closing database Connection", View.Notification.PopUp.enmType.Error);
+                        }
+                        return products;
+                    }
+                    else
+                    {
+                        List<Product> products = null;
+                        return products;
+                    }
+                }
+                catch (Exception e)
+                {
+#if DEBUG
+                    Trace.WriteLine(e.ToString());
+#endif
+                    List<Product> products = null;
+                    return products;
+                }
+            }
+            else
+            {
+                _master.Alert("Could not establish connection with database -_-", View.Notification.PopUp.enmType.Error);
+                List<Product> products = null;
+                return products;
             }
         }
     }

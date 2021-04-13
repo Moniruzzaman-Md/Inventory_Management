@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory_Management.Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,19 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory_Management.View.Notification
+namespace Inventory_Management.View.Employee.Forms
 {
-    public partial class Modal : Form
+    public partial class InventoryList : Form
     {
-        public Modal(string massage)
+        private Master _master;
+        public InventoryList()
         {
             InitializeComponent();
-            this.Massage.Text = massage;
         }
-
-        private void btn_close_Click(object sender, EventArgs e)
+        public void setResources(Master master)
         {
-            this.Dispose();
+            _master = master;
         }
     }
 }

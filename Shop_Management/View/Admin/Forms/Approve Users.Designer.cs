@@ -1,5 +1,5 @@
 ﻿
-namespace Shop_Management.View.Admin.Forms
+namespace Inventory_Management.View.Admin.Forms
 {
     partial class Approve_Users
     {

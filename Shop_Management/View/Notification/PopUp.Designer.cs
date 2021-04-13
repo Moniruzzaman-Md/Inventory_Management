@@ -1,5 +1,5 @@
 ﻿
-namespace Shop_Management.View.Notification
+namespace Inventory_Management.View.Notification
 {
     partial class PopUp
     {
@@ -39,9 +39,9 @@ namespace Shop_Management.View.Notification
             // 
             // pictureBox
             // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.error;
+            this.pictureBox.BackgroundImage = global::Inventory_Management.Properties.Resources.error;
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox.Location = new System.Drawing.Point(12, 12);
             this.pictureBox.Name = "pictureBox";
@@ -56,7 +56,7 @@ namespace Shop_Management.View.Notification
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::Shop_Management.Properties.Resources.error;
+            this.btnClose.BackgroundImage = global::Inventory_Management.Properties.Resources.error;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.Location = new System.Drawing.Point(328, 21);
             this.btnClose.Name = "btnClose";

@@ -1,8 +1,18 @@
 ﻿
 using System.Drawing;
+using System.Security.Policy;
 
-namespace Shop_Management.View.Admin
+namespace Inventory_Management.View.Admin
 {
+
+    //public static Image resizeImage(Image imgToResize, Size size)
+    //{
+    //    return (Image)(new Bitmap(imgToResize, size));
+    //}
+
+    //yourImage = resizeImage(yourImage, new Size(50,50));
+
+
     partial class Admin
     {
         /// <summary>
@@ -40,13 +50,14 @@ namespace Shop_Management.View.Admin
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_ApproveInventory = new System.Windows.Forms.Button();
             this.label_Name = new System.Windows.Forms.Label();
             this.pictureBox_user = new System.Windows.Forms.PictureBox();
             this.panel_ApprovedUser_indicator = new System.Windows.Forms.Panel();
             this.btn_approveEmployee = new System.Windows.Forms.Button();
             this.panel_clildForm = new System.Windows.Forms.Panel();
             this.panel_header = new System.Windows.Forms.Panel();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.label_header = new System.Windows.Forms.Label();
             this.panel_nav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_user)).BeginInit();
@@ -63,7 +74,7 @@ namespace Shop_Management.View.Admin
             this.panel_nav.Controls.Add(this.panel2);
             this.panel_nav.Controls.Add(this.button2);
             this.panel_nav.Controls.Add(this.panel1);
-            this.panel_nav.Controls.Add(this.button1);
+            this.panel_nav.Controls.Add(this.btn_ApproveInventory);
             this.panel_nav.Controls.Add(this.label_Name);
             this.panel_nav.Controls.Add(this.pictureBox_user);
             this.panel_nav.Controls.Add(this.panel_ApprovedUser_indicator);
@@ -163,24 +174,25 @@ namespace Shop_Management.View.Admin
             this.panel1.Size = new System.Drawing.Size(5, 61);
             this.panel1.TabIndex = 5;
             // 
-            // button1
+            // btn_ApproveInventory
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 156);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(200, 61);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "  Approve Users";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_ApproveInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
+            this.btn_ApproveInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_ApproveInventory.FlatAppearance.BorderSize = 0;
+            this.btn_ApproveInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ApproveInventory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_ApproveInventory.ForeColor = System.Drawing.Color.White;
+            this.btn_ApproveInventory.Image = ((System.Drawing.Image)(resources.GetObject("btn_ApproveInventory.Image")));
+            this.btn_ApproveInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ApproveInventory.Location = new System.Drawing.Point(0, 156);
+            this.btn_ApproveInventory.Name = "btn_ApproveInventory";
+            this.btn_ApproveInventory.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btn_ApproveInventory.Size = new System.Drawing.Size(200, 61);
+            this.btn_ApproveInventory.TabIndex = 4;
+            this.btn_ApproveInventory.Text = "  Approve Inventory";
+            this.btn_ApproveInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_ApproveInventory.UseVisualStyleBackColor = false;
+            this.btn_ApproveInventory.Click += new System.EventHandler(this.btn_ApproveInventory_Click);
             // 
             // label_Name
             // 
@@ -195,7 +207,7 @@ namespace Shop_Management.View.Admin
             // 
             // pictureBox_user
             // 
-            this.pictureBox_user.BackgroundImage = global::Shop_Management.Properties.Resources.user;
+            this.pictureBox_user.BackgroundImage = global::Inventory_Management.Properties.Resources.user;
             this.pictureBox_user.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox_user.Location = new System.Drawing.Point(75, 12);
             this.pictureBox_user.Name = "pictureBox_user";
@@ -233,9 +245,6 @@ namespace Shop_Management.View.Admin
             // 
             // panel_clildForm
             // 
-            this.panel_clildForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_clildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(0)))));
             this.panel_clildForm.Location = new System.Drawing.Point(200, 90);
             this.panel_clildForm.Name = "panel_clildForm";
@@ -245,12 +254,32 @@ namespace Shop_Management.View.Admin
             // panel_header
             // 
             this.panel_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
+            this.panel_header.Controls.Add(this.btn_logout);
             this.panel_header.Controls.Add(this.label_header);
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_header.Location = new System.Drawing.Point(200, 0);
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(734, 92);
             this.panel_header.TabIndex = 0;
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.DarkRed;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_logout.ForeColor = System.Drawing.Color.White;
+            this.btn_logout.Image = ((System.Drawing.Image)(resources.GetObject("btn_logout.Image")));
+            this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logout.Location = new System.Drawing.Point(628, 55);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(94, 29);
+            this.btn_logout.TabIndex = 1;
+            this.btn_logout.Text = "  Logout";
+            this.btn_logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // label_header
             // 
@@ -262,7 +291,6 @@ namespace Shop_Management.View.Admin
             this.label_header.Padding = new System.Windows.Forms.Padding(0, 11, 0, 0);
             this.label_header.Size = new System.Drawing.Size(734, 52);
             this.label_header.TabIndex = 0;
-            this.label_header.Text = "label";
             this.label_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Admin
@@ -299,11 +327,12 @@ namespace Shop_Management.View.Admin
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_ApproveInventory;
         private System.Windows.Forms.Panel panel_ApprovedUser_indicator;
         private System.Windows.Forms.Button btn_approveEmployee;
         private System.Windows.Forms.Panel panel_clildForm;
         private System.Windows.Forms.Panel panel_header;
         private System.Windows.Forms.Label label_header;
+        private System.Windows.Forms.Button btn_logout;
     }
 }

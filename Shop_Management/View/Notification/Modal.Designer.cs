@@ -1,5 +1,5 @@
 ﻿
-namespace Shop_Management.View.Notification
+namespace Inventory_Management.View.Notification
 {
     partial class Modal
     {
@@ -47,7 +47,7 @@ namespace Shop_Management.View.Notification
             // btn_close
             // 
             this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.BackgroundImage = global::Shop_Management.Properties.Resources.close;
+            this.btn_close.BackgroundImage = global::Inventory_Management.Properties.Resources.close;
             this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_close.FlatAppearance.BorderSize = 0;
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

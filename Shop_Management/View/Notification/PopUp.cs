@@ -1,4 +1,4 @@
-﻿using Shop_Management.Properties;
+﻿using Inventory_Management.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Shop_Management.View.Notification
+namespace Inventory_Management.View.Notification
 {
     public partial class PopUp : Form
     {
@@ -103,22 +103,22 @@ namespace Shop_Management.View.Notification
             switch (type)
             {
                 case enmType.Success:
-                    this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.success;
+                    this.pictureBox.BackgroundImage = global::Inventory_Management.Properties.Resources.success;
                     this.BackColor = Color.SeaGreen;
                     this.Massage.BackColor = Color.SeaGreen;
                     break;
                 case enmType.Error:
-                    this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.error;
+                    this.pictureBox.BackgroundImage = global::Inventory_Management.Properties.Resources.error;
                     this.BackColor = Color.DarkRed;
                     this.Massage.BackColor = Color.DarkRed;
                     break;
                 case enmType.Info:
-                    this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.info;
+                    this.pictureBox.BackgroundImage = global::Inventory_Management.Properties.Resources.info;
                     this.BackColor = Color.RoyalBlue;
                     this.Massage.BackColor = Color.RoyalBlue;
                     break;
                 case enmType.Warning:
-                    this.pictureBox.BackgroundImage = global::Shop_Management.Properties.Resources.warning;
+                    this.pictureBox.BackgroundImage = global::Inventory_Management.Properties.Resources.warning;
                     this.BackColor = Color.DarkOrange;
                     this.Massage.BackColor = Color.DarkOrange;
                     break;

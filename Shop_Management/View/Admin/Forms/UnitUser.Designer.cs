@@ -1,7 +1,7 @@
 ﻿
-namespace Shop_Management.View.Admin.Forms
+namespace Inventory_Management.View.Admin.Forms
 {
-    partial class Unit
+    partial class UnitUser
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@ namespace Shop_Management.View.Admin.Forms
             this.label_Name.AutoSize = true;
             this.label_Name.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_Name.ForeColor = System.Drawing.Color.White;
-            this.label_Name.Location = new System.Drawing.Point(350, 20);
+            this.label_Name.Location = new System.Drawing.Point(318, 20);
             this.label_Name.Name = "label_Name";
             this.label_Name.Size = new System.Drawing.Size(138, 19);
             this.label_Name.TabIndex = 2;
@@ -88,9 +88,9 @@ namespace Shop_Management.View.Admin.Forms
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.label3.Location = new System.Drawing.Point(275, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 19);
+            this.label3.Size = new System.Drawing.Size(46, 19);
             this.label3.TabIndex = 4;
-            this.label3.Text = "User Name";
+            this.label3.Text = "Name";
             // 
             // btn_Approve
             // 
@@ -99,9 +99,9 @@ namespace Shop_Management.View.Admin.Forms
             this.btn_Approve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Approve.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Approve.ForeColor = System.Drawing.Color.White;
-            this.btn_Approve.Location = new System.Drawing.Point(567, -1);
+            this.btn_Approve.Location = new System.Drawing.Point(607, 0);
             this.btn_Approve.Name = "btn_Approve";
-            this.btn_Approve.Size = new System.Drawing.Size(133, 30);
+            this.btn_Approve.Size = new System.Drawing.Size(94, 32);
             this.btn_Approve.TabIndex = 5;
             this.btn_Approve.Text = "Approve";
             this.btn_Approve.UseVisualStyleBackColor = false;
@@ -114,14 +114,15 @@ namespace Shop_Management.View.Admin.Forms
             this.btn_Decline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Decline.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Decline.ForeColor = System.Drawing.Color.White;
-            this.btn_Decline.Location = new System.Drawing.Point(567, 35);
+            this.btn_Decline.Location = new System.Drawing.Point(607, 32);
             this.btn_Decline.Name = "btn_Decline";
-            this.btn_Decline.Size = new System.Drawing.Size(133, 29);
+            this.btn_Decline.Size = new System.Drawing.Size(94, 32);
             this.btn_Decline.TabIndex = 6;
             this.btn_Decline.Text = "Decline";
             this.btn_Decline.UseVisualStyleBackColor = false;
+            this.btn_Decline.Click += new System.EventHandler(this.btn_Decline_Click);
             // 
-            // Unit
+            // UnitUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +136,7 @@ namespace Shop_Management.View.Admin.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Unit";
+            this.Name = "UnitUser";
             this.Text = "Unit";
             this.ResumeLayout(false);
             this.PerformLayout();

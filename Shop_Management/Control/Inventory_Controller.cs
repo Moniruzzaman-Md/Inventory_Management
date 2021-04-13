@@ -7,28 +7,31 @@ using System.Threading.Tasks;
 
 namespace Inventory_Management.Control
 {
-    class Admin_Controller
+
+    class Inventory_Controller
     {
         private Master _master;
         private DataAccess.DataAccess _dataAccess;
 
-        public Admin_Controller(Master master)
+        public Inventory_Controller(Master master)
         {
             _master = master;
             _dataAccess = new(_master);
         }
-        public List<User> GetUnapprovedUsers()
+
+        public bool AddInventory(Product product)
         {
-            return _dataAccess.GetUnapprovedUsers();
+            return _dataAccess.AddInventory(product);
         }
 
-        public bool ApproveUser(int id)
+        public bool ProductExists(string name)
         {
-            return _dataAccess.ApproveUser(id);
+            return _dataAccess.ProductExists(name);
         }
-        public bool RestrictUser(int id)
+
+        public List<Product> GetUnapprovedProducts()
         {
-            return _dataAccess.RestrictUser(id);
+            return _dataAccess.GetUnapprovedProducts();
         }
     }
 }

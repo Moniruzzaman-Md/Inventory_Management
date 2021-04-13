@@ -1,6 +1,6 @@
 ﻿
 
-namespace Shop_Management.View
+namespace Inventory_Management.View
 {
     partial class Registration
     {
@@ -202,7 +202,7 @@ namespace Shop_Management.View
             // 
             // panel_confirmPass_showHide
             // 
-            this.panel_confirmPass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.hide_password;
+            this.panel_confirmPass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.hide_password;
             this.panel_confirmPass_showHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_confirmPass_showHide.Location = new System.Drawing.Point(0, 168);
             this.panel_confirmPass_showHide.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -213,7 +213,7 @@ namespace Shop_Management.View
             // 
             // panel_pass_showHide
             // 
-            this.panel_pass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.hide_password;
+            this.panel_pass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.hide_password;
             this.panel_pass_showHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_pass_showHide.Location = new System.Drawing.Point(0, 127);
             this.panel_pass_showHide.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);

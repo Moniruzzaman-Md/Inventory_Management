@@ -1,6 +1,6 @@
-﻿using Shop_Management.Control;
-using Shop_Management.Model;
-using Shop_Management.View.Notification;
+﻿using Inventory_Management.Control;
+using Inventory_Management.Model;
+using Inventory_Management.View.Notification;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Shop_Management.View
+namespace Inventory_Management.View
 {
     public partial class Login : Form
     {
@@ -31,13 +31,13 @@ namespace Shop_Management.View
         {
             if (!_shown)
             {
-                this.panel_pass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.hide_password;
+                this.panel_pass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.hide_password;
                 _shown = true;
                 this.text_password.PasswordChar = '\0';
             }
             else
             {
-                this.panel_pass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.show_password;
+                this.panel_pass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.show_password;
                 _shown = false;
                 this.text_password.PasswordChar = '*';
             }
@@ -62,6 +62,9 @@ namespace Shop_Management.View
         private void btn_login_Click(object sender, EventArgs e)
         {
 #if DEBUG
+            //this.text_userName.Text = "Monir";
+            //this.text_password.Text = "aaaaaaaa";
+
             this.text_userName.Text = "Admin";
             this.text_password.Text = "Admin";
 #endif
@@ -90,11 +93,16 @@ namespace Shop_Management.View
                             {
                                 //MessageBox.Show(user.Name);
                                 _master.Admin_Page(userFromDB, this.Size, this.Location);
+                                this.text_userName.Text = "";
+                                this.text_password.Text = "";
                                 this.Hide();
                             }
                             else
                             {
-
+                                _master.Employee_Page(userFromDB, this.Size, this.Location);
+                                this.text_userName.Text = "";
+                                this.text_password.Text = "";
+                                this.Hide();
                             }
                         }
                         else if(userFromDB.Approved == "Unapproved")

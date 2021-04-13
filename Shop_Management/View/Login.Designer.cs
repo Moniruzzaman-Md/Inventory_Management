@@ -1,5 +1,5 @@
 ﻿
-namespace Shop_Management.View
+namespace Inventory_Management.View
 {
     partial class Login
     {
@@ -82,7 +82,7 @@ namespace Shop_Management.View
             // panel_login_icon
             // 
             this.panel_login_icon.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel_login_icon.BackgroundImage = global::Shop_Management.Properties.Resources.enter;
+            this.panel_login_icon.BackgroundImage = global::Inventory_Management.Properties.Resources.enter;
             this.panel_login_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_login_icon.Location = new System.Drawing.Point(82, 176);
             this.panel_login_icon.Name = "panel_login_icon";
@@ -140,7 +140,7 @@ namespace Shop_Management.View
             // 
             // panel_pass_showHide
             // 
-            this.panel_pass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.show_password;
+            this.panel_pass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.show_password;
             this.panel_pass_showHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_pass_showHide.Location = new System.Drawing.Point(0, 130);
             this.panel_pass_showHide.Name = "panel_pass_showHide";
@@ -174,7 +174,7 @@ namespace Shop_Management.View
             // 
             // panel_pass_icon
             // 
-            this.panel_pass_icon.BackgroundImage = global::Shop_Management.Properties.Resources.password;
+            this.panel_pass_icon.BackgroundImage = global::Inventory_Management.Properties.Resources.password;
             this.panel_pass_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_pass_icon.Location = new System.Drawing.Point(47, 130);
             this.panel_pass_icon.Name = "panel_pass_icon";
@@ -183,7 +183,7 @@ namespace Shop_Management.View
             // 
             // userImage
             // 
-            this.userImage.BackgroundImage = global::Shop_Management.Properties.Resources.default_user;
+            this.userImage.BackgroundImage = global::Inventory_Management.Properties.Resources.default_user;
             this.userImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.userImage.Location = new System.Drawing.Point(47, 82);
             this.userImage.Name = "userImage";

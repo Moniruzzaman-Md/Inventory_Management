@@ -1,6 +1,6 @@
-﻿using Shop_Management.Control;
-using Shop_Management.Model;
-using Shop_Management.View.Admin.Forms;
+﻿using Inventory_Management.Control;
+using Inventory_Management.Model;
+using Inventory_Management.View.Admin.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Shop_Management.View.Admin
+namespace Inventory_Management.View.Admin
 {
     public partial class Admin : Form
     {
@@ -38,6 +38,7 @@ namespace Shop_Management.View.Admin
             Approve_Users approveUsers = new();
             approveUsers.TopLevel = false;
             approveUsers.AutoScroll = true;
+            this.panel_clildForm.Controls.Clear();
             this.panel_clildForm.Controls.Add(approveUsers);
             approveUsers.Dock = DockStyle.Fill;
             approveUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
@@ -46,6 +47,27 @@ namespace Shop_Management.View.Admin
             approveUsers.setResources(_master);
             approveUsers.Show();
 
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            _master.Login_Page(this.Size, this.Location);
+            this.Dispose();
+        }
+
+        private void btn_ApproveInventory_Click(object sender, EventArgs e)
+        {
+            ApproveInventory approveInventory = new();
+            approveInventory.TopLevel = false;
+            approveInventory.AutoScroll = true;
+            this.panel_clildForm.Controls.Clear();
+            this.panel_clildForm.Controls.Add(approveInventory);
+            approveInventory.Dock = DockStyle.Fill;
+            approveInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
+            this.btn_ApproveInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
+            this.label_header.Text = approveInventory.Text;
+            approveInventory.setResources(_master);
+            approveInventory.Show();
         }
     }
 }

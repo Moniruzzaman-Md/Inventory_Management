@@ -12,9 +12,9 @@ using System.Xml.Linq;
 using System.Xml;
 using System.Threading;
 using System.Data;
-using Shop_Management.View.Notification;
+using Inventory_Management.View.Notification;
 
-namespace Shop_Management.DatabaseConnection
+namespace Inventory_Management.DatabaseConnection
 {
     class DatabaseConnection
     {
@@ -97,7 +97,7 @@ namespace Shop_Management.DatabaseConnection
         public bool InitializeTables()
         {
             DatabaseConnectionString.Open();
-            string query = "IF NOT EXISTS (" +
+            string queryUser = "IF NOT EXISTS (" +
                 "SELECT * " +
                 "FROM sys.objects " +
                 "WHERE object_id = OBJECT_ID(N'[dbo].[Users]') AND type in (N'U')) " +
@@ -108,10 +108,23 @@ namespace Shop_Management.DatabaseConnection
                 "Password nvarchar(60) NOT NULL," +
                 "Approved nvarchar(10) NOT NULL DEFAULT 'Unapproved'," +
                 "Role BIT NOT NULL DEFAULT 0);";
-            SqlCommand cmd = new (query, DatabaseConnectionString);
+            SqlCommand cmdUser = new (queryUser, DatabaseConnectionString);
+
+            string queryProduct = "IF NOT EXISTS(" +
+                "SELECT * " +
+                "FROM sys.objects " +
+                "WHERE object_id = OBJECT_ID(N'[dbo].[Products]') AND type in (N'U')) " +
+                "CREATE TABLE [dbo].Products(" +
+                "ProductID int identity(1, 1) primary key," +
+                "ProductName nvarchar(50) NOT NULL UNIQUE," +
+                "Price int NOT NULL," +
+                "Quantity int NOT NULL DEFAULT 0," +
+                "Approved BIT NOT NULL DEFAULT 0);";
+            SqlCommand cmdProduct = new(queryProduct, DatabaseConnectionString);
             try
             {
-                cmd.ExecuteNonQuery();
+                cmdUser.ExecuteNonQuery();
+                cmdProduct.ExecuteNonQuery();
                 DatabaseConnectionString.Close();
                 return true;
             }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop_Management.Model
+namespace Inventory_Management.Model
 {
     public class User
     {

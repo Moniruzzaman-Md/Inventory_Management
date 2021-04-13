@@ -1,5 +1,5 @@
-﻿using Shop_Management.Control;
-using Shop_Management.Model;
+﻿using Inventory_Management.Control;
+using Inventory_Management.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Shop_Management.View
+namespace Inventory_Management.View
 {
     public partial class Registration : Form
     {
@@ -39,11 +39,11 @@ namespace Shop_Management.View
             {
                 this.text_password.PasswordChar = '\0';
                 _passShown = true;
-                this.panel_pass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.hide_password;
+                this.panel_pass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.hide_password;
             }
             else
             {
-                this.panel_pass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.show_password;
+                this.panel_pass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.show_password;
                 _passShown = false;
                 this.text_password.PasswordChar = '*';
             }
@@ -57,11 +57,11 @@ namespace Shop_Management.View
             {
                 this.text_confirmPassword.PasswordChar = '\0';
                 _confirmPassShown = true;
-                this.panel_confirmPass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.hide_password;
+                this.panel_confirmPass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.hide_password;
             }
             else
             {
-                this.panel_confirmPass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.show_password;
+                this.panel_confirmPass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.show_password;
                 _confirmPassShown = false;
                 this.text_confirmPassword.PasswordChar = '*';
             }
@@ -120,7 +120,7 @@ namespace Shop_Management.View
                 this.text_password.Text = "";
                 this.text_password.PasswordChar = '*';
                 _passShown = false;
-                this.panel_pass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.show_password;
+                this.panel_pass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.show_password;
             }
         }
 
@@ -131,7 +131,7 @@ namespace Shop_Management.View
                 this.text_password.Text = "Password";
                 this.text_password.PasswordChar = '\0';
                 _passShown = true;
-                this.panel_pass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.hide_password;
+                this.panel_pass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.hide_password;
                 this.text_password.ForeColor = System.Drawing.Color.Gray;
             }
         }
@@ -147,7 +147,7 @@ namespace Shop_Management.View
                 this.text_confirmPassword.Text = "";
                 this.text_confirmPassword.PasswordChar = '*';
                 _confirmPassShown = false;
-                this.panel_confirmPass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.show_password;
+                this.panel_confirmPass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.show_password;
             }
         }
 
@@ -158,7 +158,7 @@ namespace Shop_Management.View
                 this.text_confirmPassword.Text = "Confirm Password";
                 this.text_confirmPassword.PasswordChar = '\0';
                 _confirmPassShown = true;
-                this.panel_confirmPass_showHide.BackgroundImage = global::Shop_Management.Properties.Resources.hide_password;
+                this.panel_confirmPass_showHide.BackgroundImage = global::Inventory_Management.Properties.Resources.hide_password;
                 this.text_confirmPassword.ForeColor = System.Drawing.Color.Gray;
             }
         }

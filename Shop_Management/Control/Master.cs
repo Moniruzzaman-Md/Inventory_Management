@@ -1,7 +1,8 @@
-﻿using Shop_Management.Model;
-using Shop_Management.View;
-using Shop_Management.View.Admin;
-using Shop_Management.View.Notification;
+﻿using Inventory_Management.Model;
+using Inventory_Management.View;
+using Inventory_Management.View.Admin;
+using Inventory_Management.View.Employee;
+using Inventory_Management.View.Notification;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,7 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Shop_Management.Control
+namespace Inventory_Management.Control
 {
     public class Master
     {
@@ -112,6 +113,15 @@ namespace Shop_Management.Control
             admin.Show();
         }
 
+        public void Employee_Page(User user, System.Drawing.Size size, System.Drawing.Point location)
+        {
+            Employee employee = new(user);
+            employee.Size = size;
+            employee.StartPosition = FormStartPosition.Manual;
+            employee.Location = location;
+            employee.setResources(this);
+            employee.Show();
+        }
         public void Alert(string msg, PopUp.enmType type)
         {
             PopUp frm = new();

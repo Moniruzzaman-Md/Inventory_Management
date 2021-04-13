@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using Shop_Management.Control;
+using Inventory_Management.Control;
 
-namespace Shop_Management
+namespace Inventory_Management
 {
     static class Program
     {

@@ -112,7 +112,7 @@
         NJlAw+tE3XIvEoF6Xbn6UTPObf5eNMujcUEiUJvrZSml9K8rLe0n4en7z4m6eq0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_ApproveInventory.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAulJREFUWEftll1ojmEYx/fFgY/YwaYp8xW2JZTPA8uKg2VbiRxRTqQcUEOSyEfR
@@ -146,6 +146,18 @@
         HxE5PbcyTxMWa9ZBnacR8UfOJd+kQl0yV1UcB331nynO9LqExZpRrO3s02sgOmnf9Qcs/w074YZ7Ji3W
         PgFdz/F6B7g0vigoh0ueJi3W3oYlniYvFuvfaaOnSUmPjbX6wVJoK3nRREeqAXYn8x5QO5w1uoDqbQ1e
         NJlAw+tE3XIvEoF6Xbn6UTPObf5eNMujcUEiUJvrZSml9K8rLe0n4en7z4m6eq0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btn_logout.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vwAADr8BOAVTJAAAAUdJREFUOE+tlDFOw0AQRS1EQ0ePEkokKCkpSZsKQgMSBT0SDQ0FIA7BHSio6HKA
+        iHMgOqo0EQhs3ux+bxxsj2yJJ33t7sz/46wSJ8vz/Botig7ge0MnmYc3jN4ry1Mpzu/oC20rXseCbRCc
+        swxltYefqX6kUh0zeBA+ltW8k1gtJirVkcEjhW0fS7HGw57RTWiWyOCRBhLeQTNb7ay+3eIhGAzVPFqv
+        p34gDdXZIwxkXSN0iW5LxfYSavedB2LeQt+qNUL/o9eVCQzQXin1A5zn6KDXQIPQQNuUTcOqRYc0kP0o
+        loqRnRnyszLMkMGjOvDv7/CU/X5olsS+S+vARmTw+N+BXOsK7SL7Zh9VO1S8Ds08JDuCfcayrngdDNNo
+        bcX+C+/w2dtxgTYUbcYM6By9oM84Ywm1saz9Ib9ZGb5AU+R/ohWy7Bd1ogeTodsjNgAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
 </root>
