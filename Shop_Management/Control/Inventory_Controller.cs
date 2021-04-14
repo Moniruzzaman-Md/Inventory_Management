@@ -33,5 +33,20 @@ namespace Inventory_Management.Control
         {
             return _dataAccess.GetUnapprovedProducts();
         }
+
+        public bool ApproveInventory(int id)
+        {
+            return _dataAccess.ApproveInventory(id);
+        }
+
+        public bool DeleteInventory(int id)
+        {
+            return _dataAccess.DeleteInventory(id);
+        }
+
+        public List<Product> getAllProducts()
+        {
+            return _dataAccess.GetAllProducts();
+        }
     }
 }

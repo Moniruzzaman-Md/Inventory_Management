@@ -62,11 +62,11 @@ namespace Inventory_Management.View
         private void btn_login_Click(object sender, EventArgs e)
         {
 #if DEBUG
-            //this.text_userName.Text = "Monir";
-            //this.text_password.Text = "aaaaaaaa";
+            this.text_userName.Text = "Monir";
+            this.text_password.Text = "aaaaaaaa";
 
-            this.text_userName.Text = "Admin";
-            this.text_password.Text = "Admin";
+            //this.text_userName.Text = "Admin";
+            //this.text_password.Text = "Admin";
 #endif
             if (this.text_userName.Text == "")
             {

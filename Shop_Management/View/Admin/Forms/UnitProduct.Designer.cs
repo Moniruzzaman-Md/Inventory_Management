@@ -94,6 +94,7 @@ namespace Inventory_Management.View.Admin.Forms
             this.btn_approve.TabIndex = 4;
             this.btn_approve.Text = "Approve";
             this.btn_approve.UseVisualStyleBackColor = false;
+            this.btn_approve.Click += new System.EventHandler(this.btn_approve_Click);
             // 
             // btn_delete
             // 
@@ -108,6 +109,7 @@ namespace Inventory_Management.View.Admin.Forms
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // UnitProduct
             // 

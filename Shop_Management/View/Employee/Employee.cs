@@ -1,5 +1,6 @@
 ﻿using Inventory_Management.Control;
 using Inventory_Management.Model;
+using Inventory_Management.Shared;
 using Inventory_Management.View.Admin.Forms;
 using Inventory_Management.View.Employee.Forms;
 using System;
@@ -55,6 +56,9 @@ namespace Inventory_Management.View.Employee
             this.label_header.Text = inventoryList.Text;
             inventoryList.setResources(_master);
             inventoryList.Show();
+
+
+            this.btn_add_product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
         }
 
         private void btn_add_product_Click(object sender, EventArgs e)
@@ -70,6 +74,9 @@ namespace Inventory_Management.View.Employee
             this.label_header.Text = addNewInventory.Text;
             addNewInventory.setResources(_master);
             addNewInventory.Show();
+
+
+            this.btn_showProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
         }
     }
 }

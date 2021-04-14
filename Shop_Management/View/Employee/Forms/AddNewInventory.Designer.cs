@@ -146,6 +146,11 @@ namespace Inventory_Management.View.Employee.Forms
             this.numericUpDown_quantity.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDown_quantity.ForeColor = System.Drawing.Color.White;
             this.numericUpDown_quantity.Location = new System.Drawing.Point(108, 110);
+            this.numericUpDown_quantity.Maximum = new decimal(new int[] {
+            -402653184,
+            -1613725636,
+            54210108,
+            0});
             this.numericUpDown_quantity.Name = "numericUpDown_quantity";
             this.numericUpDown_quantity.Size = new System.Drawing.Size(231, 29);
             this.numericUpDown_quantity.TabIndex = 6;
@@ -157,6 +162,11 @@ namespace Inventory_Management.View.Employee.Forms
             this.numericUpDown_price.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDown_price.ForeColor = System.Drawing.Color.White;
             this.numericUpDown_price.Location = new System.Drawing.Point(108, 69);
+            this.numericUpDown_price.Maximum = new decimal(new int[] {
+            -1304428544,
+            434162106,
+            542,
+            0});
             this.numericUpDown_price.Name = "numericUpDown_price";
             this.numericUpDown_price.Size = new System.Drawing.Size(231, 29);
             this.numericUpDown_price.TabIndex = 5;

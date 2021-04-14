@@ -1,4 +1,5 @@
 ﻿using Inventory_Management.Control;
+using Inventory_Management.View.Notification;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,5 +40,40 @@ namespace Inventory_Management.View.Admin.Forms
             this.label_price.Text = $"{price} Taka";
         }
 
+        private void btn_approve_Click(object sender, EventArgs e)
+        {
+            Inventory_Controller iController = new(_master);
+            if (iController.ApproveInventory(_id))
+            {
+                _master.Alert("Inventory Approved", PopUp.enmType.Success);
+                _approveInventory.setUnapprovedUserCount(_approveInventory.getUnapprovedUserCount() - 1);
+                _approveInventory.showUnapprovedProductCount();
+                this.Close();
+            }
+            else
+            {
+                _master.Alert("Error. Cluld not approve", PopUp.enmType.Error);
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete?","Chose an option", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                Inventory_Controller iController = new(_master);
+                if (iController.DeleteInventory(_id))
+                {
+                    _master.Alert("Inventory Deleted", PopUp.enmType.Success);
+                    _approveInventory.setUnapprovedUserCount(_approveInventory.getUnapprovedUserCount() - 1);
+                    _approveInventory.showUnapprovedProductCount();
+                    this.Close();
+                }
+                else
+                {
+                    _master.Alert("Error. Cluld not delete", PopUp.enmType.Error);
+                }
+            }
+        }
     }
 }
