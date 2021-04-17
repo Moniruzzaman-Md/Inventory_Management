@@ -14,5 +14,6 @@ namespace Inventory_Management.Model
         public string Password { get; set; }
         public string Approved { get; set; }
         public bool Role { get; set; }
+        public byte[] image { get; set; }
     }
 }

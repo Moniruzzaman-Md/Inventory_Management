@@ -8,6 +8,7 @@ namespace Inventory_Management.View.Admin
     //public static Image resizeImage(Image imgToResize, Size size)
     //{
     //    return (Image)(new Bitmap(imgToResize, size));
+    //(Image)(new Bitmap(global::Inventory_Management.Properties.Resources.inventory, new Size(25,25)));
     //}
 
     //yourImage = resizeImage(yourImage, new Size(50,50));
@@ -43,17 +44,12 @@ namespace Inventory_Management.View.Admin
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.panel_nav = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_UpdateProduct = new System.Windows.Forms.Button();
+            this.btn_Settings = new System.Windows.Forms.Button();
             this.btn_ApproveInventory = new System.Windows.Forms.Button();
             this.label_Name = new System.Windows.Forms.Label();
             this.pictureBox_user = new System.Windows.Forms.PictureBox();
-            this.panel_ApprovedUser_indicator = new System.Windows.Forms.Panel();
             this.btn_approveEmployee = new System.Windows.Forms.Button();
             this.panel_clildForm = new System.Windows.Forms.Panel();
             this.panel_header = new System.Windows.Forms.Panel();
@@ -67,31 +63,18 @@ namespace Inventory_Management.View.Admin
             // panel_nav
             // 
             this.panel_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
-            this.panel_nav.Controls.Add(this.panel4);
             this.panel_nav.Controls.Add(this.button4);
-            this.panel_nav.Controls.Add(this.panel3);
-            this.panel_nav.Controls.Add(this.button3);
-            this.panel_nav.Controls.Add(this.panel2);
-            this.panel_nav.Controls.Add(this.button2);
-            this.panel_nav.Controls.Add(this.panel1);
+            this.panel_nav.Controls.Add(this.btn_UpdateProduct);
+            this.panel_nav.Controls.Add(this.btn_Settings);
             this.panel_nav.Controls.Add(this.btn_ApproveInventory);
             this.panel_nav.Controls.Add(this.label_Name);
             this.panel_nav.Controls.Add(this.pictureBox_user);
-            this.panel_nav.Controls.Add(this.panel_ApprovedUser_indicator);
             this.panel_nav.Controls.Add(this.btn_approveEmployee);
             this.panel_nav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_nav.Location = new System.Drawing.Point(0, 0);
             this.panel_nav.Name = "panel_nav";
             this.panel_nav.Size = new System.Drawing.Size(200, 561);
             this.panel_nav.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Red;
-            this.panel4.Location = new System.Drawing.Point(195, 327);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 61);
-            this.panel4.TabIndex = 11;
             // 
             // button4
             // 
@@ -103,7 +86,7 @@ namespace Inventory_Management.View.Admin
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 327);
+            this.button4.Location = new System.Drawing.Point(0, 269);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(200, 61);
@@ -112,67 +95,45 @@ namespace Inventory_Management.View.Admin
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // btn_UpdateProduct
             // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Location = new System.Drawing.Point(195, 269);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 61);
-            this.panel3.TabIndex = 9;
+            this.btn_UpdateProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
+            this.btn_UpdateProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_UpdateProduct.FlatAppearance.BorderSize = 0;
+            this.btn_UpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_UpdateProduct.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_UpdateProduct.ForeColor = System.Drawing.Color.White;
+            this.btn_UpdateProduct.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpdateProduct.Image")));
+            this.btn_UpdateProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_UpdateProduct.Location = new System.Drawing.Point(0, 214);
+            this.btn_UpdateProduct.Name = "btn_UpdateProduct";
+            this.btn_UpdateProduct.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btn_UpdateProduct.Size = new System.Drawing.Size(200, 61);
+            this.btn_UpdateProduct.TabIndex = 8;
+            this.btn_UpdateProduct.Text = "  Update Product";
+            this.btn_UpdateProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_UpdateProduct.UseVisualStyleBackColor = false;
+            this.btn_UpdateProduct.Click += new System.EventHandler(this.btn_UpdateQuantity_Click);
             // 
-            // button3
+            // btn_Settings
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 269);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(200, 61);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "  Approve Users";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Location = new System.Drawing.Point(195, 213);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 61);
-            this.panel2.TabIndex = 7;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 213);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(200, 61);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "  Approve Users";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(195, 156);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 61);
-            this.panel1.TabIndex = 5;
+            this.btn_Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
+            this.btn_Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Settings.FlatAppearance.BorderSize = 0;
+            this.btn_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Settings.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Settings.ForeColor = System.Drawing.Color.White;
+            this.btn_Settings.Image = ((System.Drawing.Image)(resources.GetObject("btn_Settings.Image")));
+            this.btn_Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Settings.Location = new System.Drawing.Point(0, 323);
+            this.btn_Settings.Name = "btn_Settings";
+            this.btn_Settings.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btn_Settings.Size = new System.Drawing.Size(200, 61);
+            this.btn_Settings.TabIndex = 6;
+            this.btn_Settings.Text = "  Settings";
+            this.btn_Settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Settings.UseVisualStyleBackColor = false;
+            this.btn_Settings.Click += new System.EventHandler(this.btn_Settings_Click);
             // 
             // btn_ApproveInventory
             // 
@@ -207,21 +168,14 @@ namespace Inventory_Management.View.Admin
             // 
             // pictureBox_user
             // 
-            this.pictureBox_user.BackgroundImage = global::Inventory_Management.Properties.Resources.user;
             this.pictureBox_user.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_user.Image = global::Inventory_Management.Properties.Resources.user;
             this.pictureBox_user.Location = new System.Drawing.Point(75, 12);
             this.pictureBox_user.Name = "pictureBox_user";
             this.pictureBox_user.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_user.TabIndex = 2;
             this.pictureBox_user.TabStop = false;
-            // 
-            // panel_ApprovedUser_indicator
-            // 
-            this.panel_ApprovedUser_indicator.BackColor = System.Drawing.Color.Red;
-            this.panel_ApprovedUser_indicator.Location = new System.Drawing.Point(195, 98);
-            this.panel_ApprovedUser_indicator.Name = "panel_ApprovedUser_indicator";
-            this.panel_ApprovedUser_indicator.Size = new System.Drawing.Size(5, 61);
-            this.panel_ApprovedUser_indicator.TabIndex = 1;
             // 
             // btn_approveEmployee
             // 
@@ -320,19 +274,14 @@ namespace Inventory_Management.View.Admin
         private System.Windows.Forms.Panel panel_nav;
         private System.Windows.Forms.PictureBox pictureBox_user;
         private System.Windows.Forms.Label label_Name;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_Settings;
         private System.Windows.Forms.Button btn_ApproveInventory;
-        private System.Windows.Forms.Panel panel_ApprovedUser_indicator;
         private System.Windows.Forms.Button btn_approveEmployee;
         private System.Windows.Forms.Panel panel_clildForm;
         private System.Windows.Forms.Panel panel_header;
         private System.Windows.Forms.Label label_header;
         private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Button btn_UpdateProduct;
     }
 }

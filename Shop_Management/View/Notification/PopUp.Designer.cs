@@ -39,7 +39,7 @@ namespace Inventory_Management.View.Notification
             // 
             // pictureBox
             // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox.BackgroundImage = global::Inventory_Management.Properties.Resources.error;
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -86,7 +86,6 @@ namespace Inventory_Management.View.Notification
             this.Controls.Add(this.pictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PopUp";
-            this.Text = "User name must be atltast 5 character long";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 

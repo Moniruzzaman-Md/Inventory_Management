@@ -122,7 +122,7 @@ namespace Inventory_Management.Control
             employee.setResources(this);
             employee.Show();
         }
-        public void Alert(string msg, PopUp.enmType type)
+        public static void Alert(string msg, PopUp.enmType type)
         {
             PopUp frm = new();
             frm.showAlert(msg, type);

@@ -45,14 +45,14 @@ namespace Inventory_Management.View.Admin.Forms
             Inventory_Controller iController = new(_master);
             if (iController.ApproveInventory(_id))
             {
-                _master.Alert("Inventory Approved", PopUp.enmType.Success);
+                Master.Alert("Inventory Approved", PopUp.enmType.Success);
                 _approveInventory.setUnapprovedUserCount(_approveInventory.getUnapprovedUserCount() - 1);
                 _approveInventory.showUnapprovedProductCount();
                 this.Close();
             }
             else
             {
-                _master.Alert("Error. Cluld not approve", PopUp.enmType.Error);
+                Master.Alert("Error. Cluld not approve", PopUp.enmType.Error);
             }
         }
 
@@ -64,14 +64,14 @@ namespace Inventory_Management.View.Admin.Forms
                 Inventory_Controller iController = new(_master);
                 if (iController.DeleteInventory(_id))
                 {
-                    _master.Alert("Inventory Deleted", PopUp.enmType.Success);
+                    Master.Alert("Inventory Deleted", PopUp.enmType.Success);
                     _approveInventory.setUnapprovedUserCount(_approveInventory.getUnapprovedUserCount() - 1);
                     _approveInventory.showUnapprovedProductCount();
                     this.Close();
                 }
                 else
                 {
-                    _master.Alert("Error. Cluld not delete", PopUp.enmType.Error);
+                    Master.Alert("Error. Cluld not delete", PopUp.enmType.Error);
                 }
             }
         }

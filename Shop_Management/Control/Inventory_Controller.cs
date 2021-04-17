@@ -48,5 +48,25 @@ namespace Inventory_Management.Control
         {
             return _dataAccess.GetAllProducts();
         }
+
+        public Product GetProductDetails(int ProductID)
+        {
+            return _dataAccess.GetProductDetails(ProductID);
+        }
+
+        public bool UpdateProductName(string ProductName, int ProductID)
+        {
+            return _dataAccess.UpdateProductName(ProductName, ProductID);
+        }
+
+        public bool UpdateProductPrice(int ProductPrice, int ProductID)
+        {
+            return _dataAccess.UpdateProductPrice(ProductPrice, ProductID);
+        }
+
+        public bool UpdateProductQuantity(int Quantity, int ProductID)
+        {
+            return _dataAccess.UpdateProductQuantity(Quantity, ProductID);
+        }
     }
 }

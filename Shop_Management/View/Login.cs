@@ -62,8 +62,8 @@ namespace Inventory_Management.View
         private void btn_login_Click(object sender, EventArgs e)
         {
 #if DEBUG
-            this.text_userName.Text = "Monir";
-            this.text_password.Text = "aaaaaaaa";
+            //this.text_userName.Text = "Monir";
+            //this.text_password.Text = "aaaaaaaa";
 
             //this.text_userName.Text = "Admin";
             //this.text_password.Text = "Admin";
@@ -116,7 +116,7 @@ namespace Inventory_Management.View
                     }
                     else
                     {
-                        _master.Alert("Incorrect User Name or Password", View.Notification.PopUp.enmType.Error);
+                        Master.Alert("Incorrect User Name or Password", View.Notification.PopUp.enmType.Error);
                     }
                 }
             }

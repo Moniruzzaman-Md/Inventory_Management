@@ -121,10 +121,21 @@ namespace Inventory_Management.DatabaseConnection
                 "Quantity int NOT NULL DEFAULT 0," +
                 "Approved BIT NOT NULL DEFAULT 0);";
             SqlCommand cmdProduct = new(queryProduct, DatabaseConnectionString);
+
+            string queryUserInage = "IF NOT EXISTS(" +
+                "SELECT * " +
+                "FROM sys.objects " +
+                "WHERE object_id = OBJECT_ID(N'[dbo].[UserImage]') AND type in (N'U')) " +
+                "CREATE TABLE [dbo].UserImage(" +
+                "ImageID int identity(1, 1) primary key," +
+                "UserID int NOT NULL FOREIGN KEY REFERENCES Users(UserID)," +
+                "Image  VARBINARY(MAX) NOT NULL)";
+            SqlCommand cmdImage = new(queryUserInage, DatabaseConnectionString);
             try
             {
                 cmdUser.ExecuteNonQuery();
                 cmdProduct.ExecuteNonQuery();
+                cmdImage.ExecuteNonQuery();
                 DatabaseConnectionString.Close();
                 return true;
             }

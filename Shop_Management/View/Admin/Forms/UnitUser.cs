@@ -40,14 +40,14 @@ namespace Inventory_Management.View.Admin.Forms
         {
             Admin_Controller aController = new(_master);
             if (aController.ApproveUser(_id)){
-                _master.Alert("User Approved", PopUp.enmType.Success);
+                Master.Alert("User Approved", PopUp.enmType.Success);
                 _approveUsers.setUnapprovedUserCount(_approveUsers.getUnapprovedUserCount() - 1);
                 _approveUsers.showUnapprovedUserCount();
                 this.Close();
             }
             else
             {
-                _master.Alert("Error. Cluld not approve", PopUp.enmType.Error);
+                Master.Alert("Error. Cluld not approve", PopUp.enmType.Error);
             }
         }
 
@@ -56,14 +56,14 @@ namespace Inventory_Management.View.Admin.Forms
             Admin_Controller aController = new(_master);
             if (aController.RestrictUser(_id))
             {
-                _master.Alert("User Restricted", PopUp.enmType.Success);
+                Master.Alert("User Restricted", PopUp.enmType.Success);
                 _approveUsers.setUnapprovedUserCount(_approveUsers.getUnapprovedUserCount() - 1);
                 _approveUsers.showUnapprovedUserCount();
                 this.Close();
             }
             else
             {
-                _master.Alert("Error. Cluld not restrict", PopUp.enmType.Error);
+                Master.Alert("Error. Cluld not restrict", PopUp.enmType.Error);
             }
         }
     }

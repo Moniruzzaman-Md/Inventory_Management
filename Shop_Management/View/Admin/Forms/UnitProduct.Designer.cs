@@ -53,7 +53,7 @@ namespace Inventory_Management.View.Admin.Forms
             this.label_Name.AutoSize = true;
             this.label_Name.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_Name.ForeColor = System.Drawing.Color.White;
-            this.label_Name.Location = new System.Drawing.Point(61, 23);
+            this.label_Name.Location = new System.Drawing.Point(71, 23);
             this.label_Name.Name = "label_Name";
             this.label_Name.Size = new System.Drawing.Size(118, 21);
             this.label_Name.TabIndex = 1;
@@ -75,7 +75,7 @@ namespace Inventory_Management.View.Admin.Forms
             this.label_price.AutoSize = true;
             this.label_price.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_price.ForeColor = System.Drawing.Color.White;
-            this.label_price.Location = new System.Drawing.Point(300, 23);
+            this.label_price.Location = new System.Drawing.Point(310, 23);
             this.label_price.Name = "label_price";
             this.label_price.Size = new System.Drawing.Size(118, 21);
             this.label_price.TabIndex = 3;

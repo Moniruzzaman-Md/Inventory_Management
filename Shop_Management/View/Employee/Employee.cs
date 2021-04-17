@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,36 @@ namespace Inventory_Management.View.Employee
             InitializeComponent();
             _user = user;
             this.label_Name.Text = _user.Name;
+            if(_user.image != null)
+            {
+                Task.Run(() => {
+                    this.pictureBox_user.Image = ByteToImage(_user.image);
+                });
+            }
+            
+            
+        }
+
+        public User UpdateUserDetails()
+        {
+            _user = new User_Controller(_master).GetUserDetails(_user.UserID);
+            this.label_Name.Text = _user.Name;
+            if (_user.image != null)
+            {
+                Task.Run(() => {
+                    this.pictureBox_user.Image = ByteToImage(_user.image);
+                });
+            }
+            return _user;
+        }
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
         }
         public void setResources(Master master)
         {
@@ -59,6 +90,7 @@ namespace Inventory_Management.View.Employee
 
 
             this.btn_add_product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
+            this.btn_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
         }
 
         private void btn_add_product_Click(object sender, EventArgs e)
@@ -76,6 +108,27 @@ namespace Inventory_Management.View.Employee
             addNewInventory.Show();
 
 
+            this.btn_showProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
+            this.btn_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
+        }
+
+        private void btn_settings_Click(object sender, EventArgs e)
+        {
+            Settings settings = new();
+            settings.TopLevel = false;
+            settings.AutoScroll = true;
+            this.panel_clildForm.Controls.Clear();
+            this.panel_clildForm.Controls.Add(settings);
+            settings.Dock = DockStyle.Fill;
+            settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
+            this.btn_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
+            this.label_header.Text = settings.Text;
+            settings.setResources(_master, _user, this);
+            settings.Show();
+
+
+
+            this.btn_add_product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
             this.btn_showProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
         }
     }

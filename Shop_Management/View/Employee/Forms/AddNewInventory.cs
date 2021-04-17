@@ -39,17 +39,17 @@ namespace Inventory_Management.View.Employee.Forms
                 {
                     if (iController.AddInventory(product))
                     {
-                        _master.Alert("New Inventory Added Successfully", Notification.PopUp.enmType.Success);
+                        Master.Alert("New Inventory Added Successfully", Notification.PopUp.enmType.Success);
                     }
                     else
                     {
-                        _master.Alert("Error. Could not Add", Notification.PopUp.enmType.Error);
+                        Master.Alert("Error. Could not Add", Notification.PopUp.enmType.Error);
                     }
                 }
                 else
                 {
                     this.text_productName.BackColor = Color.DarkOrange;
-                    _master.Alert("Product Already Exists!!!", Notification.PopUp.enmType.Warning);
+                    Master.Alert("Product Already Exists!!!", Notification.PopUp.enmType.Warning);
                 }
                 
             }

@@ -44,7 +44,7 @@ namespace Inventory_Management.View.Employee
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
             this.panel_left = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_settings = new System.Windows.Forms.Button();
             this.btn_add_product = new System.Windows.Forms.Button();
             this.btn_showProduct = new System.Windows.Forms.Button();
             this.label_Name = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@ namespace Inventory_Management.View.Employee
             // panel_left
             // 
             this.panel_left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
-            this.panel_left.Controls.Add(this.button2);
+            this.panel_left.Controls.Add(this.btn_settings);
             this.panel_left.Controls.Add(this.btn_add_product);
             this.panel_left.Controls.Add(this.btn_showProduct);
             this.panel_left.Controls.Add(this.label_Name);
@@ -72,23 +72,24 @@ namespace Inventory_Management.View.Employee
             this.panel_left.Size = new System.Drawing.Size(200, 561);
             this.panel_left.TabIndex = 0;
             // 
-            // button2
+            // btn_settings
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 213);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(200, 61);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "  Product List";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_settings.FlatAppearance.BorderSize = 0;
+            this.btn_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_settings.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_settings.ForeColor = System.Drawing.Color.White;
+            this.btn_settings.Image = ((System.Drawing.Image)(resources.GetObject("btn_settings.Image")));
+            this.btn_settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_settings.Location = new System.Drawing.Point(0, 213);
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btn_settings.Size = new System.Drawing.Size(200, 61);
+            this.btn_settings.TabIndex = 4;
+            this.btn_settings.Text = "  Settings";
+            this.btn_settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_settings.UseVisualStyleBackColor = true;
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
             // btn_add_product
             // 
@@ -141,11 +142,12 @@ namespace Inventory_Management.View.Employee
             // 
             // pictureBox_user
             // 
-            this.pictureBox_user.BackgroundImage = global::Inventory_Management.Properties.Resources.user;
             this.pictureBox_user.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_user.Image = global::Inventory_Management.Properties.Resources.user;
             this.pictureBox_user.Location = new System.Drawing.Point(75, 12);
             this.pictureBox_user.Name = "pictureBox_user";
             this.pictureBox_user.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_user.TabIndex = 0;
             this.pictureBox_user.TabStop = false;
             // 
@@ -229,7 +231,7 @@ namespace Inventory_Management.View.Employee
         private System.Windows.Forms.PictureBox pictureBox_user;
         private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.Button btn_showProduct;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_settings;
         private System.Windows.Forms.Button btn_add_product;
     }
 }

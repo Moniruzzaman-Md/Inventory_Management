@@ -215,17 +215,17 @@ namespace Inventory_Management.View
                 if (!rController.UserNameExists(user.UserName)){
                     if (rController.RegisterUser(user))
                     {
-                        _master.Alert("Registration Successfull. you can login after approval ^-^", Notification.PopUp.enmType.Success);
+                        Master.Alert("Registration Successfull. you can login after approval ^-^", Notification.PopUp.enmType.Success);
                         _master.Login_Page(this.Size, this.Location);
                         this.Dispose();
                     }
                     else
                     {
-                        _master.Alert("Unknown Error. Registration failed", Notification.PopUp.enmType.Error);
+                        Master.Alert("Unknown Error. Registration failed", Notification.PopUp.enmType.Error);
                     }
                 }
                 else{
-                    _master.Alert("User Name already taken by someone else -_-", Notification.PopUp.enmType.Warning);
+                    Master.Alert("User Name already taken by someone else -_-", Notification.PopUp.enmType.Warning);
                     this.text_userName.BackColor = System.Drawing.Color.DarkOrange;
                     this.text_userName.ForeColor = System.Drawing.Color.White;
                 }
@@ -243,7 +243,7 @@ namespace Inventory_Management.View
             {
                 if (userName == "User Name")
                 {
-                    _master.Alert("Change your User Name", Notification.PopUp.enmType.Warning);
+                    Master.Alert("Change your User Name", Notification.PopUp.enmType.Warning);
                     this.text_userName.BackColor = System.Drawing.Color.DarkOrange;
                     this.text_userName.ForeColor = System.Drawing.Color.White;
                     return false;
@@ -252,7 +252,7 @@ namespace Inventory_Management.View
             }
             else
             {
-                _master.Alert("User Name have to be atleast 5 character long!!", Notification.PopUp.enmType.Warning);
+                Master.Alert("User Name have to be atleast 5 character long!!", Notification.PopUp.enmType.Warning);
                 this.text_userName.BackColor = System.Drawing.Color.DarkOrange;
                 this.text_userName.ForeColor = System.Drawing.Color.White;
                 return false;
@@ -265,7 +265,7 @@ namespace Inventory_Management.View
             {
                 if (name == "Full Name")
                 {
-                    _master.Alert("Change your Name", Notification.PopUp.enmType.Warning);
+                    Master.Alert("Change your Name", Notification.PopUp.enmType.Warning);
                     this.text_name.BackColor = System.Drawing.Color.DarkOrange;
                     this.text_name.ForeColor = System.Drawing.Color.White;
                     return false;
@@ -274,7 +274,7 @@ namespace Inventory_Management.View
             }
             else
             {
-                _master.Alert("Enter your full Name. It have to be atleast 5 character long!!", Notification.PopUp.enmType.Warning);
+                Master.Alert("Enter your full Name. It have to be atleast 5 character long!!", Notification.PopUp.enmType.Warning);
                 this.text_name.BackColor = System.Drawing.Color.DarkOrange;
                 this.text_name.ForeColor = System.Drawing.Color.White;
                 return false;
@@ -291,7 +291,7 @@ namespace Inventory_Management.View
                 }
                 else
                 {
-                    _master.Alert("Change the Password", Notification.PopUp.enmType.Warning);
+                    Master.Alert("Change the Password", Notification.PopUp.enmType.Warning);
                     this.text_password.BackColor = System.Drawing.Color.DarkOrange;
                     this.text_password.ForeColor = System.Drawing.Color.White;
                     return false;
@@ -299,7 +299,7 @@ namespace Inventory_Management.View
             }
             else
             {
-                _master.Alert("Password must be atleast 8 character long !!", Notification.PopUp.enmType.Error);
+                Master.Alert("Password must be atleast 8 character long !!", Notification.PopUp.enmType.Error);
                 this.text_password.BackColor = System.Drawing.Color.DarkRed;
                 this.text_password.ForeColor = System.Drawing.Color.White;
                 return false;
@@ -315,7 +315,7 @@ namespace Inventory_Management.View
             }
             else
             {
-                _master.Alert("Oh no!! Confirmed Password messed up!!", Notification.PopUp.enmType.Error);
+                Master.Alert("Oh no!! Confirmed Password messed up!!", Notification.PopUp.enmType.Error);
                 this.text_confirmPassword.BackColor = System.Drawing.Color.DarkRed;
                 this.text_confirmPassword.ForeColor = System.Drawing.Color.White;
                 return false;
