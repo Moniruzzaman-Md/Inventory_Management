@@ -36,5 +36,6 @@ namespace Inventory_Management.Shared
         {
             this.label_inStock.Text = $"{quantity} PCS";
         }
+
     }
 }

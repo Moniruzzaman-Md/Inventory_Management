@@ -30,6 +30,15 @@ namespace Inventory_Management.View.Admin
                     this.pictureBox_user.Image = ByteToImage(_user.image);
                 });
             }
+
+
+            Clock clock = new();
+            clock.TopLevel = false;
+            clock.AutoScroll = true;
+            this.panel_clildForm.Controls.Clear();
+            this.panel_clildForm.Controls.Add(clock);
+            clock.Dock = DockStyle.Fill;
+            clock.Show();
         }
         public void setResources(Master master)
         {
@@ -146,6 +155,17 @@ namespace Inventory_Management.View.Admin
             this.btn_approveEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
             this.btn_Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(0)))));
 
+        }
+
+        private void btn_time_Click(object sender, EventArgs e)
+        {
+            Clock clock = new();
+            clock.TopLevel = false;
+            clock.AutoScroll = true;
+            this.panel_clildForm.Controls.Clear();
+            this.panel_clildForm.Controls.Add(clock);
+            clock.Dock = DockStyle.Fill;
+            clock.Show();
         }
     }
 }

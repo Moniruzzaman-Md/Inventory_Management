@@ -168,8 +168,8 @@ namespace Inventory_Management.DatabaseConnection
                     DatabaseConnectionString.Close();
 
                     Task.Run(() => {
-                        new Modal("An Admin Account has been created for the first time. \n" +
-                        "User Name = Admin \n Password = Admin").ShowDialog();
+                        DialogResult result = MessageBox.Show("An Admin Account has been created for the first time. \n" +
+                        "User Name = Admin \n Password = Admin", "Important Message", MessageBoxButtons.OK);
                     });
                     //Task.Run(()=> {
                     //    MessageBox.Show("An Admin Account has been created for the first time. \n" +

@@ -70,9 +70,10 @@ namespace Inventory_Management.View.Admin.Forms
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox_productList);
-            this.panel1.Location = new System.Drawing.Point(40, 32);
+            this.panel1.Location = new System.Drawing.Point(46, 43);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 355);
+            this.panel1.Size = new System.Drawing.Size(747, 473);
             this.panel1.TabIndex = 0;
             // 
             // btn_cancel
@@ -82,9 +83,10 @@ namespace Inventory_Management.View.Admin.Forms
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(442, 279);
+            this.btn_cancel.Location = new System.Drawing.Point(505, 372);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(124, 35);
+            this.btn_cancel.Size = new System.Drawing.Size(142, 47);
             this.btn_cancel.TabIndex = 16;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
@@ -96,9 +98,10 @@ namespace Inventory_Management.View.Admin.Forms
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Save.ForeColor = System.Drawing.Color.White;
-            this.btn_Save.Location = new System.Drawing.Point(284, 279);
+            this.btn_Save.Location = new System.Drawing.Point(325, 372);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(135, 35);
+            this.btn_Save.Size = new System.Drawing.Size(154, 47);
             this.btn_Save.TabIndex = 15;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = false;
@@ -107,14 +110,15 @@ namespace Inventory_Management.View.Admin.Forms
             // numericUpDown_newPrice
             // 
             this.numericUpDown_newPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown_newPrice.Location = new System.Drawing.Point(494, 210);
+            this.numericUpDown_newPrice.Location = new System.Drawing.Point(565, 280);
+            this.numericUpDown_newPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown_newPrice.Maximum = new decimal(new int[] {
             1316134911,
             2328,
             0,
             0});
             this.numericUpDown_newPrice.Name = "numericUpDown_newPrice";
-            this.numericUpDown_newPrice.Size = new System.Drawing.Size(72, 29);
+            this.numericUpDown_newPrice.Size = new System.Drawing.Size(82, 35);
             this.numericUpDown_newPrice.TabIndex = 14;
             // 
             // label7
@@ -122,9 +126,9 @@ namespace Inventory_Management.View.Admin.Forms
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(401, 212);
+            this.label7.Location = new System.Drawing.Point(436, 283);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 21);
+            this.label7.Size = new System.Drawing.Size(113, 27);
             this.label7.TabIndex = 13;
             this.label7.Text = "New Price";
             // 
@@ -133,9 +137,9 @@ namespace Inventory_Management.View.Admin.Forms
             this.label_currenrPrice.AutoSize = true;
             this.label_currenrPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_currenrPrice.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label_currenrPrice.Location = new System.Drawing.Point(264, 212);
+            this.label_currenrPrice.Location = new System.Drawing.Point(302, 283);
             this.label_currenrPrice.Name = "label_currenrPrice";
-            this.label_currenrPrice.Size = new System.Drawing.Size(46, 21);
+            this.label_currenrPrice.Size = new System.Drawing.Size(60, 27);
             this.label_currenrPrice.TabIndex = 12;
             this.label_currenrPrice.Text = "9999";
             // 
@@ -144,9 +148,9 @@ namespace Inventory_Management.View.Admin.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(149, 212);
+            this.label6.Location = new System.Drawing.Point(154, 280);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 21);
+            this.label6.Size = new System.Drawing.Size(142, 27);
             this.label6.TabIndex = 11;
             this.label6.Text = "Current Price";
             // 
@@ -155,9 +159,9 @@ namespace Inventory_Management.View.Admin.Forms
             this.label_newQuantity.AutoSize = true;
             this.label_newQuantity.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_newQuantity.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label_newQuantity.Location = new System.Drawing.Point(529, 171);
+            this.label_newQuantity.Location = new System.Drawing.Point(623, 228);
             this.label_newQuantity.Name = "label_newQuantity";
-            this.label_newQuantity.Size = new System.Drawing.Size(16, 21);
+            this.label_newQuantity.Size = new System.Drawing.Size(20, 27);
             this.label_newQuantity.TabIndex = 10;
             this.label_newQuantity.Text = "-";
             // 
@@ -166,9 +170,9 @@ namespace Inventory_Management.View.Admin.Forms
             this.label_new.AutoSize = true;
             this.label_new.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_new.ForeColor = System.Drawing.Color.White;
-            this.label_new.Location = new System.Drawing.Point(411, 169);
+            this.label_new.Location = new System.Drawing.Point(470, 225);
             this.label_new.Name = "label_new";
-            this.label_new.Size = new System.Drawing.Size(112, 21);
+            this.label_new.Size = new System.Drawing.Size(147, 27);
             this.label_new.TabIndex = 9;
             this.label_new.Text = "New Quantity";
             // 
@@ -177,23 +181,24 @@ namespace Inventory_Management.View.Admin.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(275, 169);
+            this.label4.Location = new System.Drawing.Point(314, 225);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 21);
+            this.label4.Size = new System.Drawing.Size(53, 27);
             this.label4.TabIndex = 8;
             this.label4.Text = "Add";
             // 
             // numericUpDown_addQuantity
             // 
             this.numericUpDown_addQuantity.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown_addQuantity.Location = new System.Drawing.Point(324, 167);
+            this.numericUpDown_addQuantity.Location = new System.Drawing.Point(370, 223);
+            this.numericUpDown_addQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown_addQuantity.Maximum = new decimal(new int[] {
             1316134911,
             2328,
             0,
             0});
             this.numericUpDown_addQuantity.Name = "numericUpDown_addQuantity";
-            this.numericUpDown_addQuantity.Size = new System.Drawing.Size(72, 29);
+            this.numericUpDown_addQuantity.Size = new System.Drawing.Size(82, 35);
             this.numericUpDown_addQuantity.TabIndex = 7;
             this.numericUpDown_addQuantity.ValueChanged += new System.EventHandler(this.numericUpDown_addQuantity_ValueChanged);
             // 
@@ -202,9 +207,9 @@ namespace Inventory_Management.View.Admin.Forms
             this.label_CurrentQuantity.AutoSize = true;
             this.label_CurrentQuantity.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_CurrentQuantity.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label_CurrentQuantity.Location = new System.Drawing.Point(193, 171);
+            this.label_CurrentQuantity.Location = new System.Drawing.Point(221, 228);
             this.label_CurrentQuantity.Name = "label_CurrentQuantity";
-            this.label_CurrentQuantity.Size = new System.Drawing.Size(46, 21);
+            this.label_CurrentQuantity.Size = new System.Drawing.Size(60, 27);
             this.label_CurrentQuantity.TabIndex = 6;
             this.label_CurrentQuantity.Text = "9999";
             // 
@@ -213,18 +218,19 @@ namespace Inventory_Management.View.Admin.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(62, 171);
+            this.label3.Location = new System.Drawing.Point(39, 225);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 21);
+            this.label3.Size = new System.Drawing.Size(176, 27);
             this.label3.TabIndex = 4;
             this.label3.Text = "Current Quantity";
             // 
             // text_productName
             // 
             this.text_productName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.text_productName.Location = new System.Drawing.Point(284, 118);
+            this.text_productName.Location = new System.Drawing.Point(325, 157);
+            this.text_productName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_productName.Name = "text_productName";
-            this.text_productName.Size = new System.Drawing.Size(282, 29);
+            this.text_productName.Size = new System.Drawing.Size(322, 35);
             this.text_productName.TabIndex = 3;
             this.text_productName.Enter += new System.EventHandler(this.text_productName_Enter);
             // 
@@ -233,9 +239,9 @@ namespace Inventory_Management.View.Admin.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(149, 121);
+            this.label2.Location = new System.Drawing.Point(170, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 21);
+            this.label2.Size = new System.Drawing.Size(151, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "Product Name";
             // 
@@ -244,9 +250,9 @@ namespace Inventory_Management.View.Admin.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(82, 37);
+            this.label1.Location = new System.Drawing.Point(82, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 21);
+            this.label1.Size = new System.Drawing.Size(237, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Please Select a Product";
             // 
@@ -257,20 +263,22 @@ namespace Inventory_Management.View.Admin.Forms
             this.comboBox_productList.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox_productList.ForeColor = System.Drawing.Color.White;
             this.comboBox_productList.FormattingEnabled = true;
-            this.comboBox_productList.Location = new System.Drawing.Point(284, 34);
+            this.comboBox_productList.Location = new System.Drawing.Point(325, 45);
+            this.comboBox_productList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox_productList.Name = "comboBox_productList";
-            this.comboBox_productList.Size = new System.Drawing.Size(282, 29);
+            this.comboBox_productList.Size = new System.Drawing.Size(322, 35);
             this.comboBox_productList.TabIndex = 0;
             this.comboBox_productList.SelectedValueChanged += new System.EventHandler(this.comboBox_productList_SelectedValueChanged);
             // 
             // UpdateProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UpdateProduct";
             this.Text = "Update Product";
             this.Load += new System.EventHandler(this.UpdateQuantity_Load);

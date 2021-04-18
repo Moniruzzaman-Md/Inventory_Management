@@ -46,20 +46,39 @@ namespace Inventory_Management.View.Admin.Forms
         {
             try
             {
-                int ProductID = (int)this.comboBox_productList.SelectedValue;
-                _product = new Inventory_Controller(_master).GetProductDetails(ProductID);
+                //int ProductID = (int)this.comboBox_productList.SelectedValue;
+                //_product = new Inventory_Controller(_master).GetProductDetails(ProductID);
 
-                this.label_currenrPrice.Text = _product.Price.ToString();
-                this.label_CurrentQuantity.Text = _product.Quantity.ToString();
-                this.text_productName.Text = _product.ProductName;
-                this.numericUpDown_addQuantity.Value = 0;
-                this.label_newQuantity.Text = "-";
-                this.numericUpDown_newPrice.Value = 0;
+                //this.label_currenrPrice.Text = _product.Price.ToString();
+                //this.label_CurrentQuantity.Text = _product.Quantity.ToString();
+                //this.text_productName.Text = _product.ProductName;
+                //this.numericUpDown_addQuantity.Value = 0;
+                //this.label_newQuantity.Text = "-";
+                //this.numericUpDown_newPrice.Value = 0;
+
+                if (comboBox_productList.SelectedValue != null)
+                {
+                    int ProductID = (int)this.comboBox_productList.SelectedValue;
+                    _product = new Inventory_Controller(_master).GetProductDetails(ProductID);
+
+                    this.label_currenrPrice.Text = _product.Price.ToString();
+                    this.label_CurrentQuantity.Text = _product.Quantity.ToString();
+                    this.text_productName.Text = _product.ProductName;
+                    this.numericUpDown_addQuantity.Value = 0;
+                    this.label_newQuantity.Text = "-";
+                    this.numericUpDown_newPrice.Value = 0;
+                }
+                else
+                {
+                    return;
+                }
             }
             catch (Exception ex)
             {
 
             }
+
+            
         }
 
         private bool CheckProductName()

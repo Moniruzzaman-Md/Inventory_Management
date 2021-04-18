@@ -53,6 +53,7 @@ namespace Inventory_Management.View.Employee
             this.btn_logout = new System.Windows.Forms.Button();
             this.label_header = new System.Windows.Forms.Label();
             this.panel_clildForm = new System.Windows.Forms.Panel();
+            this.btn_time = new System.Windows.Forms.Button();
             this.panel_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_user)).BeginInit();
             this.panel_header.SuspendLayout();
@@ -66,6 +67,7 @@ namespace Inventory_Management.View.Employee
             this.panel_left.Controls.Add(this.btn_showProduct);
             this.panel_left.Controls.Add(this.label_Name);
             this.panel_left.Controls.Add(this.pictureBox_user);
+            this.panel_left.Controls.Add(this.btn_time);
             this.panel_left.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_left.Location = new System.Drawing.Point(0, 0);
             this.panel_left.Name = "panel_left";
@@ -201,6 +203,20 @@ namespace Inventory_Management.View.Employee
             this.panel_clildForm.Size = new System.Drawing.Size(734, 469);
             this.panel_clildForm.TabIndex = 2;
             // 
+            // btn_time
+            // 
+            this.btn_time.BackColor = System.Drawing.Color.Transparent;
+            this.btn_time.FlatAppearance.BorderSize = 0;
+            this.btn_time.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_time.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_time.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_time.Location = new System.Drawing.Point(0, 0);
+            this.btn_time.Name = "btn_time";
+            this.btn_time.Size = new System.Drawing.Size(194, 92);
+            this.btn_time.TabIndex = 0;
+            this.btn_time.UseVisualStyleBackColor = false;
+            this.btn_time.Click += new System.EventHandler(this.btn_time_Click);
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -233,5 +249,6 @@ namespace Inventory_Management.View.Employee
         private System.Windows.Forms.Button btn_showProduct;
         private System.Windows.Forms.Button btn_settings;
         private System.Windows.Forms.Button btn_add_product;
+        private System.Windows.Forms.Button btn_time;
     }
 }
